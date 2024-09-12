@@ -1,0 +1,181 @@
+<!-- Rounded switch -->
+  <label class="switch">
+    <input type="checkbox">
+    <span class="slider round"></span>
+  </label>
+
+  <style>
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #3641e0;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: rgb(255, 255, 255);
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #ff0000;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px hsl(0, 0%, 100%);
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goals and Activities</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <section class="goals">
+            <h2>Our Goals</h2>
+            <div class="vision">
+                <h3><span>01. Visi</span></h3>
+                <p>Mendukung Kemajuan Guru Pemasaran sebagai organisasi yang dapat mewujudkan Profesionalisme Guru, Siswa/ SMK dalam bidang Marketing.</p>
+            </div>
+            <div class="mission">
+                <h3><span>02. Misi</span></h3>
+                <p>Memfasilitasi Guru dan Siswa melalui berbagai aktivitas yang dilakukan bekerjasama dengan pemerintah dan DUDI agar menjadi tenaga pemasar yang Smart, Innovative, Professional.</p>
+            </div>
+        </section>
+
+        <section class="activities">
+            <h2>Agmari Activities</h2>
+            <div class="grid">
+                <div>WORKSHOP CANON</div>
+                <div>LSPR</div>
+                <div>CEO MENGAJAR</div>
+                <div>SINKRONISASI KURIKULUM</div>
+                <div>GURU MAGANG</div>
+                <div>REKRUITMEN</div>
+                <div>KUNJUNGAN INDUSTRI</div>
+                <div>KELAS INDUSTRI</div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
+
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #121212;
+  color: #fff;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h2 {
+  color: #fff;
+  margin-bottom: 20px;
+  font-size: 2em;
+}
+
+section {
+  margin-bottom: 40px;
+}
+
+.goals h3 span {
+  color: red;
+}
+
+.goals p {
+  margin-bottom: 20px;
+  font-size: 1.1em;
+}
+
+.activities h2 {
+  margin-bottom: 30px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.grid div {
+  background-color: #222;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2em;
+}

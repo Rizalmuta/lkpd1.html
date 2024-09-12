@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+    <style>
+body {
+font-family: Arial, sans-serif;
+background-color: #79d8e9;
+margin: 0;
+padding: 0;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+}
+
+.container {
+text-align: center;
+background-color: #fff;
+padding: 30px 40px;
+border-radius: 10px;
+}
+
+form {
+margin-bottom: 20px;
+}
+
+input[type="date"] {
+padding: 10px;
+width: 200px;
+border: 1px solid #ccc;
+border-radius: 5px;
+margin-right: 10px;
+font-size: 16px;
+}
+
+input[type="submit"] {
+padding: 10px 20px;
+background-color: #007BFF;
+color: white;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+font-size: 16px;
+}
+
+input[type="submit"]:hover {
+background-color: #0056b3;
+}
+
+p {
+font-size: 18px;
+color: #333;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form id="searchForm">
+            <input type="date" id="dateInput" placeholder="dd-mm-yyyy" value="" min="2000-01-01" max="2030-01-31">
+            <input type="submit" id="submit" value="Submit">
+        </form>
+        <p id="output">Tidak Mencari Data.........</p>
+    </div>
+
+    <script>
+        let searchInput = document.getElementById("dateInput");
+        let output = document.getElementById("output");
+
+        document.getElementById("searchForm").addEventListener("submit", function(event) {
+            event.preventDefault(); 
+
+            let searchValue = searchInput.value;
+            output.textContent = "Mencari data tanggal " + searchValue + "...........";
+        });
+    </script>
+</body>
+</html>

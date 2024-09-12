@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document</title>
+    <style>
+        .form-section {
+            display: none;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <p>status ayah*</p>
+    <form>
+        <label>
+            <input type="radio" name="statusAyah" value="masihHidup" onclick="showForm('hidup')"> Masih Hidup
+        </label>
+        <br>
+        <label>
+            <input type="radio" name="statusAyah" value="meninggal" onclick="showForm('meninggal')"> Meninggal
+        </label>
+        <br>
+        <label>
+            <input type="radio" name="statusAyah" value="tidakDiketahui" onclick="showForm('tidakDiketahui')"> Tidak Diketahui
+        </label>
+    </form>
+
+
+    <div id="formHidup" class="form-section">
+        <h3>Detail Ayah</h3>
+        <label for="pendidikan">pendidikan
+            <select name="" id="">
+                <option value="pilih">pilih</option>
+                <option value=""></option>
+                <option value=""></option>
+            </select>
+        </label><br>
+        <label>Pekerjaan Ayah: <input type="text" id="pekerjaanAyahHidup"></label><br>
+        <label>Deskripsi Pekerjaan: <input type="text" id="deskripsiPekerjaanAyahHidup"></label><br>
+        <label>Total Penghasilan Ayah: <input type="text" id="totalPenghasilanAyahHidup"></label><br>
+        <label>Detail Ayah Bekerja: <input type="text" id="detailAyahBekerjaHidup"></label><br>
+        <label>Kondisi Kesehatan: <input type="text" id="kondisiKesehatanAyahHidup"></label><br>
+    </div>
+
+    <div id="formMeninggal" class="form-section">
+        <h3>Detail Ayah</h3>
+        <label for="pendidikan">pendidikan
+            <select name="" id="">
+                <option value="pilih">pilih</option>
+                <option value=""></option>
+                <option value=""></option>
+            </select><br>
+        <label>Pekerjaan Ayah: <input type="text" id="pekerjaanAyahMeninggal"></label><br>
+        <label>Deskripsi Pekerjaan: <input type="text" id="deskripsiPekerjaanAyahMeninggal"></label><br>
+        <label>Total Penghasilan Ayah: <input type="text" id="totalPenghasilanAyahMeninggal"></label><br>
+        <label>Detail Pekerjaan ayah Semasa Hidup: <input type="text" id="detailPekerjaanAyahMeninggal"></label><br>
+        <label>Pendidikan Ayah: <input type="text" id="pendidikanAyahHidup"></label><br>
+    </div>
+
+    <script>
+        function showForm(status) {
+            document.getElementById('formHidup').style.display = 'none';
+            document.getElementById('formMeninggal').style.display = 'none';
+            if (status === 'hidup') {
+                document.getElementById('formHidup').style.display = 'block';
+            } else if (status === 'meninggal') {
+                document.getElementById('formMeninggal').style.display = 'block';
+            }
+        }
+        
+    </script>
+</body>
+</html>

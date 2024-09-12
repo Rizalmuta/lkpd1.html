@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hitung Mundur</title>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Jersey+10&family=Matemasie&family=New+Amsterdam&family=Silkscreen:wght@400;700&display=swap');
+body {
+font-family: 'Arial', sans-serif;
+background: linear-gradient(to right, #616867, #a6b0dd);
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+margin: 0;
+}
+
+.all {
+text-align: center;
+background: rgb(29, 19, 19);
+padding: 40px;
+border-radius: 15px;
+}
+
+.all h1 {
+font-size: 2.5em;
+color: #e91c1c;
+margin-bottom: 20px;
+font-family: "Jersey 10", sans-serif;;
+}
+
+.ukuran {
+font-size: 3em;
+font-weight: bold;
+color: #ffffff;
+font-family:  "Silkscreen", sans-serif;;
+}
+
+button {
+padding: 15px 30px;
+font-size: 1.2em;
+font-weight: bold;
+color: rgb(0, 0, 0);
+background-color: #dee67b;
+border: none;
+border-radius: 8px;
+margin: 10px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+}
+
+button:hover {
+background-color: #bd4b80;
+}
+        
+</style>
+</head>
+<body>
+<div class="all">
+<h1>Hitung Mundur</h1>
+<div class="ukuran">
+<div id="countdown">Mulai</div>
+</div>
+<button onclick="mulai()">Mulai</button>
+<button onclick="berhenti()">Berhenti</button>
+</div>
+
+<script>
+let countdownElement = document.getElementById("countdown");
+let countdownValue = 10;
+let intervalId;
+function mulai() {
+if (intervalId) return; 
+intervalId = setInterval(function() {
+countdownElement.textContent = countdownValue;
+countdownValue--;
+if (countdownValue < 0) {
+clearInterval(intervalId);
+countdownElement.textContent = "Waktu habis!";
+}
+}, 300);
+}
+function berhenti() {
+clearInterval(intervalId);
+intervalId = null; 
+}
+</script>
+</body>
+</html>

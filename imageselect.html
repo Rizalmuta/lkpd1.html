@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Select</title>
+        <style>
+            
+        </style>
+    </head>
+    <body>
+<div style="display:flex; justify-content:space-around; align-items:center; border:15px solid rgb(0, 0, 0); width:500px; margin:300px auto">
+<img src="img1.jpg" alt="gambar1" width="300" height="" id="gambar">
+<form style="display:flex; flex-direction:column">
+<label for="gambar-select">Pilih Gambar</label>
+<select id="gambar-select">
+<option value="img1.jpg">Gambar 1</option>
+<option value="img2.jpg">Gambar 2</option>
+<option value="img3.jpg">Gambar 3</option>
+</select>
+<label for="bentuk">Pilih Bentuk</label>
+<select id="bentuk">
+<option value="lingkaran">Lingkaran</option>
+<option value="kotak">Kotak</option>
+<option value="segitiga">Segitiga</option>
+</select>
+<label for="warna">Pilih Warna</label>
+<select id="warna">
+<option value="merah">Merah</option>
+<option value="kuning">Kuning</option>
+<option value="hijau">Hijau</option>
+</select>
+<button type="submit">Kirim</button>
+</form>
+</div>
+
+<script>
+const gambar = document.getElementById('gambar');
+const form = document.querySelector('form');
+const gambarSelect = document.getElementById('gambar-select');
+form.addEventListener('submit', (e) => {
+e.preventDefault();
+const bentuk = document.getElementById('bentuk').value;
+gambar.src = gambarSelect.value;
+if (bentuk === 'lingkaran') {
+gambar.style.borderRadius = '90%';
+gambar.style.clipPath = 'none';
+gambar.style.border = 'none';
+} else if (bentuk === 'kotak') {
+gambar.style.borderRadius = '0';
+gambar.style.clipPath = 'none';
+gambar.style.border = `2px solid ${warna}`;
+} else if (bentuk === 'segitiga') {
+gambar.style.borderRadius = '90';
+gambar.style.border = 'none';
+gambar.style.clipPath = 'polygon(50% 0%, 100% 100%, 0% 100%)';
+} else {
+gambar.style.borderRadius = '0';
+gambar.style.border = 'none';
+gambar.style.clipPath = 'none';
+}
+});
+</script>
+</body>
+</html>
+</body>
+</html>

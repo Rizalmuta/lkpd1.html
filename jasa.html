@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Sekolah</title>
+</head>
+<body>
+<h2>Data Sekolah</h2>
+    <p>Jenjang Pendidikan</p>
+    <select name="jenjang" id="jenjang" onchange="updateTingkat()">
+        <option value="sma">SMA / Sederajat</option>
+        <option value="sd">SD</option>
+        <option value="smp">SMP</option>
+    </select>
+    <br><br>
+<p>Tingkat Sekolah/Perguruan Tinggi*</p>
+<select name="tingkat" id="tingkat">
+  </select>
+
+<script>
+ function updateTingkat() {
+const jenjang = document.getElementById("jenjang").value;
+const tingkat = document.getElementById("tingkat");
+
+ tingkat.innerHTML = "";
+if (jenjang === "sma") {
+const tingkatSMA = ["pilih","10", "11", "12"];
+ tingkatSMA.forEach(function(t) {
+ const option = document.createElement("option");
+option.value = t;
+option.text = t;
+tingkat.appendChild(option);
+});
+} else if (jenjang === "sd") {
+const tingkatSD = ["pilih","1", "2", "3", "4", "5", "6"];
+tingkatSD.forEach(function(t) {
+const option = document.createElement("option");
+option.value = t;
+option.text = t;
+tingkat.appendChild(option);
+});
+ } else if (jenjang === "smp") {
+const tingkatSMP = ["pilih","7", "8", "9"];
+tingkatSMP.forEach(function(t) {
+const option = document.createElement("option");
+option.value = t;
+option.text = t;
+tingkat.appendChild(option);
+});
+}
+}
+updateTingkat();
+    </script>
+
+</body>
+</html>
